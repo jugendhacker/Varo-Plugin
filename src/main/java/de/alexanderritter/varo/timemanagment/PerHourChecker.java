@@ -67,6 +67,7 @@ public class PerHourChecker extends TimerTask {
 		YamlConfiguration players = plugin.getPlayerConfig();
 		for(String id : players.getKeys(false)) {
 			players.set(id + ".sessions_today", null);
+			players.set(id + ".recent_time", plugin.getSettings().getSessionsLength());
 		}
 		plugin.savePlayerConfig(players);
 		plugin.getConfig().set("plugin.day", day);
